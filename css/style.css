@@ -36,7 +36,7 @@
 }
 
 .none {
-  display: none;
+  display: none !important;
 }
 
 .links__opened {
@@ -50,7 +50,7 @@
 }
 
 .hidden {
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 body {
@@ -426,8 +426,11 @@ a:hover {
 
 
 .pools__item-logo {
+  height: 50px;
+  display: flex;
+  align-items: center;
   max-width: 100%;
-  max-height: 302px;
+  max-width: 302px;
   margin-bottom: 32px;
 }
 
@@ -682,4 +685,115 @@ a:hover {
 .footer__item-powered img {
   max-width: 160px;
   margin-bottom: 32px;
+}
+
+
+.overlay {
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  z-index: 10;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.form-wrapper {
+  background-repeat: no-repeat;
+  background-position: top 10% right -600px;
+  background-image: url(../img/form-bg.svg);
+  background-color: rgba(0, 0, 0, .8);
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 448px;
+  padding: 24px;
+  box-shadow: 0 25px 50px -12px hsla(0, 0%, 100%, .3);
+}
+
+.form__title {
+  font-size: 20px;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.form__text {
+  font-size: 16px;
+  margin-bottom: 24px;
+  color: var(--white);
+}
+
+label[for="email"] {
+  display: flex;
+  gap: 3px;
+}
+
+label[for="email"] img {
+  width: 14px;
+  height: 14px;
+}
+
+.form__input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form__input label {
+  line-height: 21px;
+  font-size: 16px;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.form__input input {
+  width: 100%;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 16px;
+  border-width: 1px;
+  border-color: transparent;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  background-color: var(--white);
+}
+
+.form__input input:hover,
+.form__input input:focus {
+  border-color: var(--link-white-text);
+}
+
+.form__buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+}
+
+.form__buttons button {
+  padding: 8px 16px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.form__button_cancel {
+  background-color: var(--white);
+
+}
+
+.form__button_confirm {
+  background-color: var(--link-white-text);
+  color: var(--white);
+}
+
+.form__button_confirm:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

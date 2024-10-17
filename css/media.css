@@ -178,6 +178,11 @@
   .cases__item {
     height: 328px !important;
     padding: 32px 24px;
+    gap: 5px;
+  }
+
+  .cases__item-icon {
+    max-width: 80px;
   }
 
   .maximize__title {
@@ -221,5 +226,19 @@
 
   .footer__contact_link {
     width: 100%;
+  }
+
+  .pools__item_mobile-hidden {
+    display: none;
+  }
+}
+
+@media (max-width:414px) {
+  .cases__item {
+    padding: 16px 12px;
+  }
+
+  .why__item {
+    min-width: 100%;
   }
 }
